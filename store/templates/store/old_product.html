@@ -1,0 +1,322 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+        <div class="navbar">
+            <div class="logo">
+           <img src="images/logo.png" width="125px">
+            </div>
+            <nav>      
+                <ul id="Menuitems">
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Products">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+                
+
+        </nav>
+        <div class="cart-img">
+            <img src="images/cart.png" width="30px" height="30px">
+            <span>0</span>
+        </div>
+        <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+
+            </div>
+   
+
+           
+        </div>
+        
+
+
+
+<div class="small-container">
+    <div class="row row2">
+        <h2>All products</h2>
+        <select name="" id="">
+            <option value="">Default Sorting</option>
+            <option value="">Sort by price</option>
+            <option value="">Sort by popularity</option>
+            <option value="">Sort by rating</option>
+            <option value="">Sort by sale</option>
+
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <img src="images/product-11.jpg">
+            <h4>Grey low top sneakers</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+            </div>
+        <div class="col-3">
+            <img src="images/product-6 (2).jpg" width="100%">
+            <h4>Black printed shirt</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+        </div>
+        <div class="col-3">
+            <img src="images/product-10.jpg">
+            <h4>Black puma sneakers</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+        </div>
+        <div class="col-3">
+            <img src="images/product-2.jpg">
+            <h4>Black sneakers</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <img src="images/product-1.jpg">
+            <h4>Red Printed T-shirt</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button><a href="alproduct.html">Add to cart</a></button>
+            </div>
+        <div class="col-3">
+            <img src="images/product-7.jpg" width="100%">
+            <h4>HRX socks</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half"></i>
+            <i class="fa fa-star-o"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+        </div>
+        <div class="col-3">
+            <img src="images/product-10.jpg">
+            <h4>Men's sneakers</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+        </div>
+        <div class="col-3">
+            <img src="images/product-10.jpg">
+            <h4>Men's sneakers</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <img src="images/product-11.jpg">
+            <h4>White low top sneakers</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+            </div>
+        <div class="col-3">
+            <img src="images/product-6 (2).jpg" width="100%"> 
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half"></i>
+            <i class="fa fa-star-o"></i>
+            <h4>Black puma shirt</h4>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+            
+        </div>
+        <div class="col-3">
+            <img src="images/product-10.jpg">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <h4>Black men's sneakers</h4>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+        </div>
+        <div class="col-3">
+            <img src="images/product-10.jpg">
+            <h4>Men's sneakers</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <img src="images/product-11.jpg">
+            <h4>Men's sneakers</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+            </div>
+        <div class="col-3">
+            <img src="images/product-6 (2).jpg" width="100%">
+            <h4>Men's sneakers</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+        </div>
+        <div class="col-3">
+            <img src="images/product-10.jpg">
+            <h4>Men's sneakers</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+        </div>
+        <div class="col-3">
+            <img src="images/product-10.jpg">
+            <h4>Men's sneakers</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+        </div>
+    </div>
+    
+<div class="page-btn">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>&#8594;</span>
+</div>
+</div>
+
+
+<!--CONTACT-->
+{% comment %} <section id="contact">
+<div class="title-text">
+    <p>CONTACT</p>
+    <h1>Visit Our Customer Care Today</h1>
+</div>
+<div class="contact-row">
+    <div class="contact-left">
+        <h1>opeining hours</h1>
+        <p> <i class="fa fa-clock-o"></i>Monday to Friday - 8am to 10pm</p>
+        <p><i class="fa fa-clock-o"></i>Saturday to Sunday - 8am to 11pm</p>
+    </div>
+    <div class="contact-right">
+        <h1>Visit Our Office</h1>
+        <p> 18 Umudii village, uratta, aba
+            <i class="fa fa-map-marker"></i>
+        </p>
+        <p>easytrade@gmail.com
+            <i class="fa fa-paper-plane"></i> 
+        </p>
+        <p>  +234 9164208561
+            <i class="fa fa-phone"></i>
+        </p>
+    </div>
+</div>
+<section id="social-media">
+    <div class="social">
+        <i class="fa fa-twitter"></i>
+        <a href="www.facebook.com"><i class="fa fa-facebook"></i></a>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-youtube-play"></i>
+        
+
+    </div>
+</section>
+</section> {% endcomment %}
+   
+
+
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed(".auto-type", {
+        strings: ["Easy!", "Smart!", "Awesome!"],
+        typeSpeed: 150,
+        backSpeed: 150,
+        loop: true
+    })
+
+    var typed = new Typed(".automatic-type", {
+        strings: ["Grow!", "Build!", "shape!", "Upgrade!"],
+        typeSpeed: 150,
+        backSpeed: 150,
+        loop: true
+    })
+
+    var menuBtn = document.getElementById("menuBtn")
+    var sidenav = document.getElementById("sidenav")
+    var menu = document.getElementById("menu")
+    
+    sidenav.style.right = "-250px";
+
+    menuBtn.onclick = function(){
+        if(sidenav.style.right == "-250px" ){
+            sidenav.style.right = "0";
+            menu.src = "close.png";
+        }
+        else {
+            sidenav.style.right = "-250px";
+            menu.src = "menu.png";
+        }
+    }
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 1000,
+        speedAsDuration: true
+    });
+
+</script>
+<!--js for toggke menu-->
+
+
+<script>
+    var Menuitems = document.getElementById("Menuitems");
+
+    Menuitems.style.maxHeight = "0px";
+
+    function menutoggle(){
+        if (Menuitems.style.maxHeight == "0px")
+        {
+            Menuitems.style.maxHeight = "200px";
+        }
+        else{
+            Menuitems.style.maxHeight = "0px";
+        }
+    }
+</script>
+
+</div>
+{% endblock content %}

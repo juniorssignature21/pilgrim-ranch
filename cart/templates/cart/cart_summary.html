@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "navbar.html" %}
+        
+<!-- cart items details -->
+<div class="small-container cart-page">
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Subtotal</th>
+  </tr>
+  {% if cart_products %}
+  {% for product in cart_products %}
+  <tr>
+    <td>
+      <div class="cart-info">
+        <img src="{{product.image.url}}">
+        <div>
+          <p> {{product.name}} </p>
+          <small>Price: ${{product.price}}</small>
+          <br>
+          <!-- <a href="">Remove</a> -->
+        </div>
+      </div>
+    </td>
+    <td>
+      
+      <div class="row justify-content-center">
+        <div class="col-md-2">Quantity:</div>
+        <div class="col-md-2">                    
+        <select name="" id="select{{product.id}}" class="form-select form-select-sm">
+            {% for key, value in quantities.items %}
+            
+            {% if key == product.id|slugify %}
+                <option value="" selected>
+                {{value}}
+                </option>
+                {% endif %}
+
+            {% endfor %}
+            
+            <option value="1" >1</option>
+            <option value="2" >2</option>
+            <option value="3" >3</option>
+            <option value="4" >4</option>
+            <option value="5" >5</option>
+        </select>
+        </div>
+        <br><br>
+        <div>
+          <button type="button" data-index="{{product.id}}" class="btn btn-secondary update-cart" style="width: 30px; height: 30px; background-color: #700067; border: none;">
+            <i class="bi bi-arrow-repeat"></i>
+        </button>
+          <button type="button" data-index="{{product.id}}" class="btn btn-danger delete-product" style="width: 30px; height: 30px; background-color: #ff0000; border: none;" title="Delete item">
+            <i class="bi bi-trash"></i>
+        </button>
+        </div>
+    </div>
+    <!-- <input type="number" value="1"> -->
+    {% comment %} <div class="quantity">
+      <span class="minus"> {% endcomment %}
+        <!-- <i class="fa fa-plus-lg"></i> -->
+        {% comment %} </span>
+        <span>1</span>
+        <span class="plus">
+          +
+          </span>
+          </div> {% endcomment %}
+          </td>
+          
+          <td>$50.00</td>
+          </tr>
+          
+          
+    {% endfor %}
+          </table>
+          
+<div class="total-price">
+
+  <table>
+    <tr>
+      <td>Subtotal</td>
+      <td>${{totals}}</td>
+      </tr>
+      <tr>
+      <td>Tax</td>
+      <td>$35.00</td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td>${{totals}}</td>
+      </tr>
+      </table>
+      </div>
+      
+      </div>
+      
+      
+      <!--CONTACT-->
+{% else %}
+There is Nothing here!!!
+{% endif %}  
+
+
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed(".auto-type", {
+        strings: ["Easy!", "Smart!", "Awesome!"],
+        typeSpeed: 150,
+        backSpeed: 150,
+        loop: true
+    })
+
+    var typed = new Typed(".automatic-type", {
+        strings: ["Grow!", "Build!", "shape!", "Upgrade!"],
+        typeSpeed: 150,
+        backSpeed: 150,
+        loop: true
+    })
+
+    var menuBtn = document.getElementById("menuBtn")
+    var sidenav = document.getElementById("sidenav")
+    var menu = document.getElementById("menu")
+    
+    sidenav.style.right = "-250px";
+
+    menuBtn.onclick = function(){
+        if(sidenav.style.right == "-250px" ){
+            sidenav.style.right = "0";
+            menu.src = "close.png";
+        }
+        else {
+            sidenav.style.right = "-250px";
+            menu.src = "menu.png";
+        }
+    }
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 1000,
+        speedAsDuration: true
+    });
+
+</script>
+<!--js for toggke menu-->
+
+
+<script>
+    var Menuitems = document.getElementById("Menuitems");
+
+    Menuitems.style.maxHeight = "0px";
+
+    function menutoggle(){
+        if (Menuitems.style.maxHeight == "0px")
+        {
+            Menuitems.style.maxHeight = "200px";
+        }
+        else{
+            Menuitems.style.maxHeight = "0px";
+        }
+    }
+</script>
+<script>
+// Update cart
+$(document).on('click', '.update-cart', function(e){
+  e.preventDefault();
+  // grab the product id
+  var productid = $(this).data('index');
+  $.ajax({
+      type: 'POST',
+      url: '{% url "cart_update" %}',
+      data: {
+          product_id: $(this).data('index'),
+          product_qty: $('#select' + productid + ' option:selected').text(),
+          csrfmiddlewaretoken: '{{csrf_token}}',
+          action: 'post'
+      },
+      
+      success: function(json){
+          //console.log(json)
+          //document.getElementById("cart_quantity").textContent = json.qty
+          location.reload();
+      },
+      error: function(xhr, errmsg, err){
+
+      }
+  });
+})
+// delete product from  cart
+$(document).on('click', '.delete-product', function(e){
+  e.preventDefault();
+  // grab the product id
+  //var productid = $(this).data('index');
+  $.ajax({
+      type: 'POST',
+      url: '{% url "cart_delete" %}',
+      data: {
+          product_id: $(this).data('index'),
+          csrfmiddlewaretoken: '{{csrf_token}}',
+          action: 'post'
+      },
+      
+      success: function(json){
+          //console.log(json)
+          //document.getElementById("cart_quantity").textContent = json.qty
+          location.reload();
+      },
+      error: function(xhr, errmsg, err){
+
+      }
+  });
+})
+</script>
+</div>
+{% endblock content %}

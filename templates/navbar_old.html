@@ -1,0 +1,30 @@
+{% load static %}
+<div class="navbar">
+    <div class="logo">
+       {% comment %} <img src="{% static "image/easytrade 2.png" %}" width="125px"> {% endcomment %}
+       <h1>QuickShop</h1>
+       
+    </div>
+        <nav>      
+            <ul id="Menuitems">
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "about" %}">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contacts</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link" href="{% url "logout" %}">Logout</a></li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link" href="{% url "login" %}">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url "register" %}">Register</a></li>
+                {% endif %}
+            </ul>
+
+        </nav>
+        <a href="{% url "cart_summary" %}" style="text-decoration: none; position: relative;">
+
+            <img src="{% static "image/cart.png" %}" width="30px" height="30px" id="title">
+            <span id="cart_quantity" style="display: flex; align-items:center; justify-content: center; width: 20px; height: 20px; background-color: #ff0000; color: #000; border-radius: 50%; font-size: 12px; position: absolute; left: 50%; top: 50%; font-weight: bold;">{{cart|length}}</span>
+            </a>
+    <img src="{% static "image/menu.png" %}" class="menu-icon" onclick="menutoggle()">
+
+</div>

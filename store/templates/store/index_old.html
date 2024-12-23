@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="header">
+    <div class="container">
+        {% include "navbar.html" %}
+
+   
+
+            <div class="row">
+           <div class="col-1">
+                <h1 class="title">EasyTrade!</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa neque exercitationem repellendus! Nisi, quod eum quos totam itaque laboriosam quaerat nostrum iste enim ut, quibusdam architecto iusto soluta molestias in, accusamus neque at accusantium quis cupiditate ipsam repellat. Laborum eos non, molestias voluptates eveniet laudantium porro consectetur obcaecati quod quibusdam necessitatibus perspiciatis, ipsum nobis veniam blanditiis in esse aliquam mollitia sed recusandae qui, consequuntur quaerat iusto error.!</p>
+            <h2><span> <a href="product.html">Explore Now</a></span></h2>
+
+        </div>
+        <div class="col-1">
+            <img src="{% static "images/image1.png" %}">
+            </div>
+        </div>
+        </div>
+        </div>
+
+{% comment %} 
+<!----------Products------------>
+<div class="Product">
+<div class="small-container">
+    <div class="title-text">
+        <p>Featured Products</p>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img src="images/category-2.jpg" alt="">
+        </div>
+        <div class="col">
+            <img src="images/category-1.jpg" alt="">
+        </div>
+        <div class="col">
+            <img src="images/category-3.jpg" alt="">
+        </div>
+    </div>
+    </div>
+</div> {% endcomment %}
+
+<!---Our Products-->
+<div class="small-container">
+    <div class="title-text">
+        <p>Products</p>
+    </div>
+    <div class="row">
+        {% for product in products%}
+        {% if product.is_sale %}
+        <div class="col-3" id="item1">
+            <img src="{{product.image.url}}">
+            <center>
+            <h4>{{product.name}}</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+
+                ${{product.price}}
+            &nbsp;
+        <strike>
+            {{product.sale_price}}
+        </strike>
+    <br>
+<a href="{% url "product" product.id %}">
+    <button onclick="addToCart(item1)" class="add">view Product</button>
+</a>
+</center>
+        </div>
+        {% else %}
+        <div class="col-3" id="item1">
+            <img src="{{product.image.url}}">
+            <center>
+
+                <h4>{{product.name}}</h4>
+            <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<p>${{product.price}}</p>
+<a href="{% url "product" product.id %}">
+    <button onclick="addToCart(item1)" class="add">View Product</button>
+</a>
+</center>
+                </div>
+                
+        {% endif %}
+        {% endfor %}
+        {% comment %} <div class="col-3" id="item2">
+            <img src="images/product-6 (2).jpg" width="100%">
+            <h4>Black printed shirt</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button onclick="addToCart(item2)">Add to cart</button>
+        </div>
+        <div class="col-3">
+            <img src="images/product-10.jpg">
+            <h4>Black puma sneakers</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+        </div>
+        <div class="col-3">
+            <img src="images/product-2.jpg">
+            <h4>Black sneakers</h4>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <p>$50.00</p>
+            <button>Add to cart</button>
+        </div> {% endcomment %}
+    </div>
+    
+</div>
+<!---------Latest Products----------
+<div class="offer">
+    <div class="small-container">
+    <div class="rows">
+        <div class="col-2">
+            <img src="images/exclusive.png" class="offer-img">
+    </div>
+        <div class="col-2">
+            <p>Exclusively Avaialble on EasyTrade!</p>
+            <h1>Smart Band</h1>
+            <small>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur cum sit ab similique nisi hic laboriosam eius corporis quos perferendis?</small>
+            <a href="" class="button">Buy Now &#8594;</a>    
+            </div>
+    </div>
+</div>
+</div--->
+<!- testimonial -->
+<section id="testimonial">
+<div class="title-text">
+    <p>Testimonial</p>
+    <h1>What clients say about us</h1>
+    </div>
+    <div class="testimonial-row">
+         <div class="testimonial-col">
+            <div class="user">
+                <img src="images/user-3.png">
+                <div class="user-info">
+                    <h4>DOREEN BIADUO <i class="fa fa-twitter"></i></h4>
+                    <small>@doreenbiaduo</small>
+                </div>
+            </div>
+           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse id rem fugit nihil corporis, 
+            veritatis doloremque fugiat ut et distinctio 
+            perspiciatis nesciunt minima ab repudiandae sequi dolore repellat. Voluptate, quas!</p>
+         </div>
+         <div class="testimonial-col">
+            <div class="user">
+                <img src="images/user-2.png">
+                <div class="user-info">
+                    <h4>KENNEDY SMITH <i class="fa fa-twitter"></i> </h4>
+                    <small>@kennedysmith</small>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse id rem fugit nihil corporis, 
+                veritatis doloremque fugiat ut et distinctio 
+                perspiciatis nesciunt minima ab repudiandae sequi dolore repellat. Voluptate, quas!</p>
+         </div>
+         <div class="testimonial-col">
+            <div class="user">
+                <img src="images/user-1.png">
+                <div class="user-info">
+                    <h4>AKACHI NWOKE <i class="fa fa-linkedin"></i> </h4>
+                    <small>@akachinwoke</small>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse id rem fugit nihil corporis, 
+                veritatis doloremque fugiat ut et distinctio 
+                perspiciatis nesciunt minima ab repudiandae sequi dolore repellat. Voluptate, quas!</p>
+         </div>
+    </div>
+    
+    
+</section>
+
+
+   
+
+
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed(".auto-type", {
+        strings: ["Easy!", "Smart!", "Awesome!"],
+        typeSpeed: 150,
+        backSpeed: 150,
+        loop: true
+    })
+
+    var typed = new Typed(".automatic-type", {
+        strings: ["Grow!", "Build!", "shape!", "Upgrade!"],
+        typeSpeed: 150,
+        backSpeed: 150,
+        loop: true
+    })
+
+    var menuBtn = document.getElementById("menuBtn")
+    var sidenav = document.getElementById("sidenav")
+    var menu = document.getElementById("menu")
+    
+    sidenav.style.right = "-250px";
+
+    menuBtn.onclick = function(){
+        if(sidenav.style.right == "-250px" ){
+            sidenav.style.right = "0";
+            menu.src = "close.png";
+        }
+        else {
+            sidenav.style.right = "-250px";
+            menu.src = "menu.png";
+        }
+    }
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 1000,
+        speedAsDuration: true
+    });
+
+</script>
+<!--js for toggke menu-->
+
+
+<script>
+    var Menuitems = document.getElementById("Menuitems");
+
+    Menuitems.style.maxHeight = "0px";
+
+    function menutoggle(){
+        if (Menuitems.style.maxHeight == "0px")
+        {
+            Menuitems.style.maxHeight = "200px";
+        }
+        else{
+            Menuitems.style.maxHeight = "0px";
+        }
+    }
+</script>
+
+
+{% endblock content %}
